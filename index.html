@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <title>既に立ち上げている１００％委員会</title>
+</head>
+
+<body class="container">
+  <h6>マウスでvagrantup!
+    <br>(winでのペーストは右クリックです。)</h4>
+    <br>
+    <h3>vagrant up</h2>
+      <div class="container">
+        <p class="copyTarget">cd %USERPROFILE%\vagrant\ubuntu64_16
+          <br>vagrant up</p>
+        <button type="button" class="btn btn-default btn-xs" id="start">クリップボードにコピー</button>
+      </div>
+
+      <h3>vagrant halt</h2>
+        <div class="container">
+          <p class="copyTarget2">vagrant halt</p>
+          <button type="button" class="btn btn-default btn-xs" id="end">クリップボードにコピー</button>
+        </div>
+
+        <script>
+          function copyText_s() {
+            var $target = document.querySelector('.copyTarget');
+            var range = document.createRange();
+            range.selectNode($target);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            return false;
+          }
+          function copyText_e() {
+            var $target = document.querySelector('.copyTarget2');
+            var range = document.createRange();
+            range.selectNode($target);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            return false;
+          }
+          document.querySelector('#start').addEventListener('click', copyText_s, false);
+          document.querySelector('#end').addEventListener('click', copyText_e, false);
+        </script>
+</body>
+
+</html>
